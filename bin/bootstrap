@@ -1,0 +1,17 @@
+#!/bin/bash
+
+set -e
+
+# Create Secrets.swift if there is none yet
+current_dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+secrets_path="$current_dir/../biblio/Secrets.swift"
+if [ ! -f "$secrets_path" ]; then
+  echo '📝 Generating Secrets.swift...'
+  cp "$current_dir/Secrets.swift.template" $secrets_path
+  echo "✅ Secrets.swift generated. Insert the secrets values in there."
+else
+  echo '⏭ Skipped Secrets.swift generation, file exists already.'
+fi
+
+echo ''
+echo '✅ All done. Happy developing.'
