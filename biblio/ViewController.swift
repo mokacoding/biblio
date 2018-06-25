@@ -14,7 +14,7 @@ class ViewController: UIViewController, UITableViewDataSource {
     loadingView.isHidden = false
     tableView.isHidden = true
 
-    let request = URLRequest(url: URL(string: "https://api.nytimes.com/svc/books/v3/lists.json?api-key=\(Secrets.nytKey)&list=paperback-nonfiction")!)
+    let request = URLRequest(url: URL(string: "https://api.nytimes.com/svc/books/v3/lists.json?api-key=\(Secrets.nytKey)&list=combined-print-and-e-book-nonfiction")!)
     URLSession.shared.dataTask(with: request) { [weak self] (data, response, error) in
       self?.books = (try! JSONSerialization.jsonObject(with: data!, options: []) as! [String: Any])["results"] as! [[String: Any]]
 
