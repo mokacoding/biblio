@@ -9,7 +9,8 @@ class ViewController: UIViewController, UITableViewDataSource {
 
   override func viewDidLoad() {
     tableView.dataSource = self
-    tableView.register(UITableViewCell.self, forCellReuseIdentifier: "book-cell")
+    tableView.register(SubtitleCell.self, forCellReuseIdentifier: "book-cell")
+    tableView.rowHeight = UITableViewAutomaticDimension
 
     loadingView.isHidden = false
     tableView.isHidden = true
@@ -32,7 +33,11 @@ class ViewController: UIViewController, UITableViewDataSource {
 
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCell(withIdentifier: "book-cell", for: indexPath)
-    cell.textLabel?.text = (books[indexPath.row]["book_details"] as? [[String: Any]])?.first?["title"] as? String
+    if let bookDetails = (books[indexPath.row]["book_details"] as? [[String: Any]])?.first {
+      cell.textLabel?.text = bookDetails["title"] as? String
+      cell.detailTextLabel?.text = bookDetails["description"] as? String
+      cell.detailTextLabel?.numberOfLines = 0
+    }
     return cell
   }
 }
