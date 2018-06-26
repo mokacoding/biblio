@@ -37,7 +37,32 @@ class ViewController: UIViewController, UITableViewDataSource {
       cell.textLabel?.text = bookDetails["title"] as? String
       cell.detailTextLabel?.text = bookDetails["description"] as? String
       cell.detailTextLabel?.numberOfLines = 0
+
+      DispatchQueue.global().async {
+        if
+          let isbn = bookDetails["primary_isbn13"] as? String,
+          let thumbnailURL = URL(string: "https://www.googleapis.com/books/v1/volumes?q=isbn:\(isbn)&key=\(Secrets.googleBooksKey)")
+        {
+          URLSession.shared.dataTask(with: thumbnailURL) { data, request, error in
+            if
+              let data = data,
+              let googleBookDict = try? JSONSerialization.jsonObject(with: data, options: []) as? [String: Any],
+              let bookInfo = (googleBookDict?["items"] as? [[String: Any]])?.first?["volumeInfo"] as? [String: Any],
+              let imageLinks = bookInfo["imageLinks"] as? [String: Any],
+              let thumbnailURLString = (imageLinks["thumbnail"] as? String)?.replacingOccurrences(of: "http://", with: "https://"),
+              let thumbnailURL = URL(string: thumbnailURLString),
+              let imageData = try? Data(contentsOf: thumbnailURL)
+            {
+              let image = UIImage(data: imageData)
+              DispatchQueue.main.async {
+                cell.imageView?.image = image
+              }
+            }
+          }.resume()
+        }
+      }
     }
+
     return cell
   }
 }
