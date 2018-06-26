@@ -1,5 +1,13 @@
 # 📚Biblio - Discover new books
 
+> **biblio-**
+> /ˈbɪblɪəʊ/
+>
+> _combining form_
+>
+> relating to a book or books.
+> "bibliomania"
+
 Biblio is the project name for book browser app fetching the [New York Times best sellers list](https://www.nytimes.com/books/best-sellers/combined-print-and-e-book-nonfiction/).
 
 It serves as the playground for the "Refactoring Horrible Codebases Driven By Tests" workshop.
