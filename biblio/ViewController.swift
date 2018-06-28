@@ -9,7 +9,7 @@ class ViewController: UIViewController, UITableViewDataSource {
 
   override func viewDidLoad() {
     tableView.dataSource = self
-    tableView.register(SubtitleCell.self, forCellReuseIdentifier: "book-cell")
+    tableView.register(UINib(nibName: "BookTableViewCell", bundle: .none), forCellReuseIdentifier: "book-cell")
     tableView.rowHeight = UITableViewAutomaticDimension
 
     loadingView.isHidden = false
@@ -33,10 +33,12 @@ class ViewController: UIViewController, UITableViewDataSource {
 
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCell(withIdentifier: "book-cell", for: indexPath)
+    guard let bookCell = cell as? BookTableViewCell else { return cell }
+
     if let bookDetails = (books[indexPath.row]["book_details"] as? [[String: Any]])?.first {
-      cell.textLabel?.text = bookDetails["title"] as? String
-      cell.detailTextLabel?.text = bookDetails["description"] as? String
-      cell.detailTextLabel?.numberOfLines = 0
+      bookCell.titleLabel?.text = bookDetails["title"] as? String
+      bookCell.descriptionLabel?.text = bookDetails["description"] as? String
+      bookCell.thumbnailImageView.contentMode = .scaleAspectFit
 
       DispatchQueue.global().async {
         if
@@ -55,9 +57,9 @@ class ViewController: UIViewController, UITableViewDataSource {
             {
               let image = UIImage(data: imageData)
               DispatchQueue.main.async {
-                cell.imageView?.image = image
-                cell.setNeedsLayout()
-                cell.layoutIfNeeded()
+                bookCell.thumbnailImageView.image = image
+                bookCell.setNeedsLayout()
+                bookCell.layoutIfNeeded()
               }
             }
           }.resume()
