@@ -5,14 +5,27 @@ class BookTableViewCell: UITableViewCell {
   @IBOutlet var titleLabel: UILabel!
   @IBOutlet var descriptionLabel: UILabel!
   @IBOutlet var thumbnailImageView: UIImageView!
+  @IBOutlet var imageLoadingView: UIActivityIndicatorView!
+  @IBOutlet var imageLoadFailLabel: UILabel!
+
+  override func awakeFromNib() {
+    super.awakeFromNib()
+    reset()
+  }
 
   override func prepareForReuse() {
     super.prepareForReuse()
+    reset()
+  }
 
-    thumbnailImageView.image = UIImage(
-      color: .gray,
-      size: CGSize(width: 1, height: 1)
-    )
+  func reset() {
+    thumbnailImageView.image = nil
+    thumbnailImageView.isHidden = true
+
+    imageLoadingView.isHidden = false
+    imageLoadingView.startAnimating()
+
+    imageLoadFailLabel.isHidden = true
   }
 }
 

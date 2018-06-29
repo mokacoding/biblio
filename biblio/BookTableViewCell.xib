@@ -37,23 +37,38 @@
                             <constraint firstAttribute="width" constant="60" id="vIY-19-K1v"/>
                         </constraints>
                     </imageView>
+                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="VaB-RG-hPn">
+                        <rect key="frame" x="28" y="28" width="20" height="20"/>
+                    </activityIndicatorView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="🤷‍♀️📘" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1ZT-pI-2xP">
+                        <rect key="frame" x="15" y="28" width="46" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
                 <constraints>
                     <constraint firstAttribute="bottom" secondItem="cUC-IV-net" secondAttribute="bottom" constant="8" id="43Q-vs-Lnc"/>
                     <constraint firstAttribute="bottom" secondItem="EzU-Nh-8PT" secondAttribute="bottom" constant="8" id="7ac-S7-YZK"/>
+                    <constraint firstItem="1ZT-pI-2xP" firstAttribute="centerX" secondItem="cUC-IV-net" secondAttribute="centerX" id="AqH-GZ-nPV"/>
                     <constraint firstItem="fNJ-cF-b6S" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="FyH-4q-32g"/>
                     <constraint firstItem="cUC-IV-net" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="H3J-ty-mfP"/>
                     <constraint firstItem="cUC-IV-net" firstAttribute="top" secondItem="fNJ-cF-b6S" secondAttribute="top" id="Pzb-8p-rXv"/>
+                    <constraint firstItem="VaB-RG-hPn" firstAttribute="centerX" secondItem="cUC-IV-net" secondAttribute="centerX" id="Zja-oD-wZi"/>
                     <constraint firstAttribute="trailing" secondItem="fNJ-cF-b6S" secondAttribute="trailing" constant="8" id="a6d-d2-7GP"/>
                     <constraint firstItem="fNJ-cF-b6S" firstAttribute="leading" secondItem="cUC-IV-net" secondAttribute="trailing" constant="8" id="d1z-dl-QUw"/>
+                    <constraint firstItem="1ZT-pI-2xP" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="fS8-f0-7iZ"/>
                     <constraint firstItem="EzU-Nh-8PT" firstAttribute="leading" secondItem="fNJ-cF-b6S" secondAttribute="leading" id="jCD-Yk-hAd"/>
                     <constraint firstAttribute="trailing" secondItem="EzU-Nh-8PT" secondAttribute="trailing" constant="8" id="pSV-bt-Q6k"/>
+                    <constraint firstItem="VaB-RG-hPn" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="tlX-GQ-gXV"/>
                     <constraint firstItem="EzU-Nh-8PT" firstAttribute="top" secondItem="fNJ-cF-b6S" secondAttribute="bottom" constant="8" id="yka-V2-YCI"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="descriptionLabel" destination="EzU-Nh-8PT" id="ljy-KH-q7l"/>
+                <outlet property="imageLoadFailLabel" destination="1ZT-pI-2xP" id="JeT-2H-uVD"/>
+                <outlet property="imageLoadingView" destination="VaB-RG-hPn" id="bzB-nR-Pa6"/>
                 <outlet property="thumbnailImageView" destination="cUC-IV-net" id="AS7-wY-aaF"/>
                 <outlet property="titleLabel" destination="fNJ-cF-b6S" id="6LI-ya-uLH"/>
             </connections>

@@ -57,9 +57,17 @@ class ViewController: UIViewController, UITableViewDataSource {
             {
               let image = UIImage(data: imageData)
               DispatchQueue.main.async {
+                bookCell.thumbnailImageView.isHidden = false
                 bookCell.thumbnailImageView.image = image
+                bookCell.imageLoadingView.stopAnimating()
                 bookCell.setNeedsLayout()
                 bookCell.layoutIfNeeded()
+              }
+            } else {
+              DispatchQueue.main.async {
+                bookCell.thumbnailImageView.isHidden = true
+                bookCell.imageLoadingView.stopAnimating()
+                bookCell.imageLoadFailLabel.isHidden = false
               }
             }
           }.resume()
