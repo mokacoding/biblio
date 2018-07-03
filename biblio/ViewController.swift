@@ -44,25 +44,27 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
       DispatchQueue.global().async {
         if
           let isbn = bookDetails["primary_isbn13"] as? String,
-          let thumbnailURL = URL(string: "https://www.googleapis.com/books/v1/volumes?q=isbn:\(isbn)&key=\(Secrets.googleBooksKey)")
+          let googleBookURL = URL(string: "https://www.googleapis.com/books/v1/volumes?q=isbn:\(isbn)&key=\(Secrets.googleBooksKey)")
         {
-          URLSession.shared.dataTask(with: thumbnailURL) { data, request, error in
+          URLSession.shared.dataTask(with: googleBookURL) { data, request, error in
             if
               let data = data,
               let googleBookDict = try? JSONSerialization.jsonObject(with: data, options: []) as? [String: Any],
               let bookInfo = (googleBookDict?["items"] as? [[String: Any]])?.first?["volumeInfo"] as? [String: Any],
               let imageLinks = bookInfo["imageLinks"] as? [String: Any],
               let thumbnailURLString = (imageLinks["thumbnail"] as? String)?.replacingOccurrences(of: "http://", with: "https://"),
-              let thumbnailURL = URL(string: thumbnailURLString),
-              let imageData = try? Data(contentsOf: thumbnailURL)
+              let thumbnailURL = URL(string: thumbnailURLString)
             {
-              let image = UIImage(data: imageData)
-              DispatchQueue.main.async {
-                bookCell.thumbnailImageView.isHidden = false
-                bookCell.thumbnailImageView.image = image
-                bookCell.imageLoadingView.stopAnimating()
-                bookCell.setNeedsLayout()
-                bookCell.layoutIfNeeded()
+              ImageCache.shared.image(for: thumbnailURL) { image in
+                if let image = image {
+                  DispatchQueue.main.async {
+                    bookCell.thumbnailImageView.isHidden = false
+                    bookCell.thumbnailImageView.image = image
+                    bookCell.imageLoadingView.stopAnimating()
+                    bookCell.setNeedsLayout()
+                    bookCell.layoutIfNeeded()
+                  }
+                }
               }
             } else {
               DispatchQueue.main.async {
