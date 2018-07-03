@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3F05611D20E629A5002BAD9B /* BookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F05611C20E629A5002BAD9B /* BookViewController.swift */; };
 		3F1983D120E18E4000F8AA03 /* SubtitleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1983D020E18E4000F8AA03 /* SubtitleCell.swift */; };
 		3F61461C20E426CC00384213 /* BookTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F61461A20E426CC00384213 /* BookTableViewCell.swift */; };
 		3F61461D20E426CC00384213 /* BookTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F61461B20E426CC00384213 /* BookTableViewCell.xib */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3F05611C20E629A5002BAD9B /* BookViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookViewController.swift; sourceTree = "<group>"; };
 		3F1983D020E18E4000F8AA03 /* SubtitleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubtitleCell.swift; sourceTree = "<group>"; };
 		3F61461A20E426CC00384213 /* BookTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookTableViewCell.swift; sourceTree = "<group>"; };
 		3F61461B20E426CC00384213 /* BookTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BookTableViewCell.xib; sourceTree = "<group>"; };
@@ -74,6 +76,7 @@
 				3F1983D020E18E4000F8AA03 /* SubtitleCell.swift */,
 				3F61461A20E426CC00384213 /* BookTableViewCell.swift */,
 				3F61461B20E426CC00384213 /* BookTableViewCell.xib */,
+				3F05611C20E629A5002BAD9B /* BookViewController.swift */,
 			);
 			path = biblio;
 			sourceTree = "<group>";
@@ -153,6 +156,7 @@
 				3FC57FA120DB24210011F6A6 /* ViewController.swift in Sources */,
 				3F1983D120E18E4000F8AA03 /* SubtitleCell.swift in Sources */,
 				3FC57FB120DB37CC0011F6A6 /* Secrets.swift in Sources */,
+				3F05611D20E629A5002BAD9B /* BookViewController.swift in Sources */,
 				3F61461C20E426CC00384213 /* BookTableViewCell.swift in Sources */,
 				3FC57F9F20DB24210011F6A6 /* AppDelegate.swift in Sources */,
 			);

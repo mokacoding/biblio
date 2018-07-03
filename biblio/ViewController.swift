@@ -1,6 +1,6 @@
 import UIKit
 
-class ViewController: UIViewController, UITableViewDataSource {
+class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
   @IBOutlet var tableView: UITableView!
   @IBOutlet var loadingView: UIView!
@@ -9,6 +9,7 @@ class ViewController: UIViewController, UITableViewDataSource {
 
   override func viewDidLoad() {
     tableView.dataSource = self
+    tableView.delegate = self
     tableView.register(UINib(nibName: "BookTableViewCell", bundle: .none), forCellReuseIdentifier: "book-cell")
     tableView.rowHeight = UITableViewAutomaticDimension
 
@@ -76,5 +77,19 @@ class ViewController: UIViewController, UITableViewDataSource {
     }
 
     return cell
+  }
+
+  func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    tableView.deselectRow(at: indexPath, animated: true)
+
+    performSegue(withIdentifier: "show-book-details", sender: (books[indexPath.row]["book_details"] as? [[String: Any]])?.first)
+  }
+
+  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    if segue.identifier == "show-book-details" {
+      if let bookViewController = segue.destination as? BookViewController {
+        bookViewController.book = sender as? [String: Any]
+      }
+    }
   }
 }

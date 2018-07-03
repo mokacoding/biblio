@@ -66,10 +66,58 @@
                     <connections>
                         <outlet property="loadingView" destination="xkw-Dq-50M" id="amn-Wi-fld"/>
                         <outlet property="tableView" destination="daq-Pf-2rH" id="a9O-bt-RXX"/>
+                        <segue destination="bEM-50-HkY" kind="show" identifier="show-book-details" id="PEU-0p-gXb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="74" y="135"/>
+        </scene>
+        <!--Book View Controller-->
+        <scene sceneID="raj-sU-G4k">
+            <objects>
+                <viewController id="bEM-50-HkY" customClass="BookViewController" customModule="biblio" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Si3-OX-f7j">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="mfB-t9-vw3">
+                                <rect key="frame" x="137" y="36" width="100" height="160"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="Ckt-gz-d4e"/>
+                                    <constraint firstAttribute="height" constant="160" id="KhI-lP-ILs"/>
+                                </constraints>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="1000" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Dpm-b1-kul">
+                                <rect key="frame" x="8" y="212" width="359" height="20.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oYG-gD-Q8T">
+                                        <rect key="frame" x="0.0" y="0.0" width="359" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="mfB-t9-vw3" firstAttribute="centerX" secondItem="XLy-2t-W5Q" secondAttribute="centerX" id="ETK-s5-zyN"/>
+                            <constraint firstItem="XLy-2t-W5Q" firstAttribute="top" secondItem="mfB-t9-vw3" secondAttribute="top" constant="-16" id="Ek7-2t-ej5"/>
+                            <constraint firstItem="Dpm-b1-kul" firstAttribute="top" secondItem="mfB-t9-vw3" secondAttribute="bottom" constant="16" id="Frz-J7-Obn"/>
+                            <constraint firstItem="Dpm-b1-kul" firstAttribute="leading" secondItem="XLy-2t-W5Q" secondAttribute="leading" constant="8" id="oTp-jr-FTX"/>
+                            <constraint firstItem="XLy-2t-W5Q" firstAttribute="trailing" secondItem="Dpm-b1-kul" secondAttribute="trailing" constant="8" id="vIW-SB-shS"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="XLy-2t-W5Q"/>
+                    </view>
+                    <connections>
+                        <outlet property="coverImageView" destination="mfB-t9-vw3" id="yFY-cI-A5p"/>
+                        <outlet property="titleLabel" destination="oYG-gD-Q8T" id="coo-uC-lsS"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Rcd-Fi-HFN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1000.8" y="133.5832083958021"/>
         </scene>
     </scenes>
 </document>
