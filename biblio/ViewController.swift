@@ -124,13 +124,31 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     tableView.deselectRow(at: indexPath, animated: true)
 
-    performSegue(withIdentifier: "show-book-details", sender: (books[indexPath.row]["book_details"] as? [[String: Any]])?.first)
+    if
+      let book = (books[indexPath.row]["book_details"] as? [[String: Any]])?.first,
+      let isbn = book["primary_isbn13"] as? String,
+      let googleBookURL = URL(string: "https://www.googleapis.com/books/v1/volumes?q=isbn:\(isbn)&key=\(Secrets.googleBooksKey)"),
+      let googleBook = googleBooks[googleBookURL]
+    {
+      let payload: [String: Any] = [
+        "book": book,
+        "googleBook": googleBook
+      ]
+
+      performSegue(withIdentifier: "show-book-details", sender: payload)
+    }
   }
 
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     if segue.identifier == "show-book-details" {
-      if let bookViewController = segue.destination as? BookViewController {
-        bookViewController.book = sender as? [String: Any]
+      if
+        let bookViewController = segue.destination as? BookViewController,
+        let payload = sender as? [String: Any],
+        let book = payload["book"] as? [String: Any],
+        let googleBook = payload["googleBook"] as? [String: Any]
+      {
+        bookViewController.book = book
+        bookViewController.googleBook = googleBook
       }
     }
   }
