@@ -6,6 +6,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
   @IBOutlet var loadingView: UIView!
 
   var books: [[String: Any]] = []
+  var googleBooks: [URL: [String: Any]] = [:]
 
   override func viewDidLoad() {
     tableView.dataSource = self
@@ -41,16 +42,14 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
       bookCell.descriptionLabel?.text = bookDetails["description"] as? String
       bookCell.thumbnailImageView.contentMode = .scaleAspectFit
 
-      DispatchQueue.global().async {
+      DispatchQueue.global().async { [weak self] in
         if
           let isbn = bookDetails["primary_isbn13"] as? String,
           let googleBookURL = URL(string: "https://www.googleapis.com/books/v1/volumes?q=isbn:\(isbn)&key=\(Secrets.googleBooksKey)")
         {
-          URLSession.shared.dataTask(with: googleBookURL) { data, request, error in
+          if let googleBook = self?.googleBooks[googleBookURL] {
             if
-              let data = data,
-              let googleBookDict = try? JSONSerialization.jsonObject(with: data, options: []) as? [String: Any],
-              let bookInfo = (googleBookDict?["items"] as? [[String: Any]])?.first?["volumeInfo"] as? [String: Any],
+              let bookInfo = (googleBook["items"] as? [[String: Any]])?.first?["volumeInfo"] as? [String: Any],
               let imageLinks = bookInfo["imageLinks"] as? [String: Any],
               let thumbnailURLString = (imageLinks["thumbnail"] as? String)?.replacingOccurrences(of: "http://", with: "https://"),
               let thumbnailURL = URL(string: thumbnailURLString)
@@ -64,6 +63,12 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                     bookCell.setNeedsLayout()
                     bookCell.layoutIfNeeded()
                   }
+                } else {
+                  DispatchQueue.main.async {
+                    bookCell.thumbnailImageView.isHidden = true
+                    bookCell.imageLoadingView.stopAnimating()
+                    bookCell.imageLoadFailLabel.isHidden = false
+                  }
                 }
               }
             } else {
@@ -73,7 +78,42 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                 bookCell.imageLoadFailLabel.isHidden = false
               }
             }
-          }.resume()
+          } else {
+            URLSession.shared.dataTask(with: googleBookURL) { [weak self] data, request, error in
+              if
+                let data = data,
+                let googleBookDict = try? JSONSerialization.jsonObject(with: data, options: []) as? [String: Any],
+                let bookInfo = (googleBookDict?["items"] as? [[String: Any]])?.first?["volumeInfo"] as? [String: Any],
+                let imageLinks = bookInfo["imageLinks"] as? [String: Any],
+                let thumbnailURLString = (imageLinks["thumbnail"] as? String)?.replacingOccurrences(of: "http://", with: "https://"),
+                let thumbnailURL = URL(string: thumbnailURLString)
+              {
+                self?.googleBooks[googleBookURL] = googleBookDict
+
+                ImageCache.shared.image(for: thumbnailURL) { image in
+                  if let image = image {
+                    DispatchQueue.main.async {
+                      bookCell.thumbnailImageView.isHidden = false
+                      bookCell.thumbnailImageView.image = image
+                      bookCell.imageLoadingView.stopAnimating()
+                      bookCell.setNeedsLayout()
+                      bookCell.layoutIfNeeded()
+                    }
+                  } else {
+                    bookCell.thumbnailImageView.isHidden = true
+                    bookCell.imageLoadingView.stopAnimating()
+                    bookCell.imageLoadFailLabel.isHidden = false
+                  }
+                }
+              } else {
+                DispatchQueue.main.async {
+                  bookCell.thumbnailImageView.isHidden = true
+                  bookCell.imageLoadingView.stopAnimating()
+                  bookCell.imageLoadFailLabel.isHidden = false
+                }
+              }
+            }.resume()
+          }
         }
       }
     }
