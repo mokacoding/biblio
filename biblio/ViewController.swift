@@ -130,25 +130,12 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
       let googleBookURL = URL(string: "https://www.googleapis.com/books/v1/volumes?q=isbn:\(isbn)&key=\(Secrets.googleBooksKey)"),
       let googleBook = googleBooks[googleBookURL]
     {
-      let payload: [String: Any] = [
-        "book": book,
-        "googleBook": googleBook
-      ]
+      let storyboard = UIStoryboard(name: "Main", bundle: Bundle(for: ViewController.self))
 
-      performSegue(withIdentifier: "show-book-details", sender: payload)
-    }
-  }
-
-  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-    if segue.identifier == "show-book-details" {
-      if
-        let bookViewController = segue.destination as? BookViewController,
-        let payload = sender as? [String: Any],
-        let book = payload["book"] as? [String: Any],
-        let googleBook = payload["googleBook"] as? [String: Any]
-      {
+      if let bookViewController = storyboard.instantiateViewController(withIdentifier: "book") as? BookViewController {
         bookViewController.book = book
         bookViewController.googleBook = googleBook
+        navigationController?.pushViewController(bookViewController, animated: true)
       }
     }
   }

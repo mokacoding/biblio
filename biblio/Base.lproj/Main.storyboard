@@ -77,7 +77,7 @@
         <!--Book View Controller-->
         <scene sceneID="raj-sU-G4k">
             <objects>
-                <viewController id="bEM-50-HkY" customClass="BookViewController" customModule="biblio" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="book" id="bEM-50-HkY" customClass="BookViewController" customModule="biblio" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Si3-OX-f7j">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
