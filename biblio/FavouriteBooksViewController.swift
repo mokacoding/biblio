@@ -1,6 +1,6 @@
 import UIKit
 
-class FavouriteBooksViewController: UIViewController, UITableViewDataSource {
+class FavouriteBooksViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
   @IBOutlet var tableView: UITableView!
   @IBOutlet var emptyLabel: UILabel!
@@ -13,6 +13,7 @@ class FavouriteBooksViewController: UIViewController, UITableViewDataSource {
     navigationController?.navigationBar.prefersLargeTitles = true
 
     tableView.dataSource = self
+    tableView.delegate = self
     tableView.register(UINib(nibName: "BookTableViewCell", bundle: .none), forCellReuseIdentifier: "book-cell")
   }
 
@@ -78,5 +79,18 @@ class FavouriteBooksViewController: UIViewController, UITableViewDataSource {
     }
 
     return cell
+  }
+
+  func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+    return  UISwipeActionsConfiguration(actions: [
+        UIContextualAction(style: .destructive, title: "Delete") { [weak self] (_, _, completionHandler) in
+          if let book = self?.books?[indexPath.row] {
+            LocalBooksManager.shared.delete(book)
+            completionHandler(true)
+          } else {
+            completionHandler(false)
+          }
+        }
+      ])
   }
 }
