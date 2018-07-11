@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		3F05611D20E629A5002BAD9B /* BookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F05611C20E629A5002BAD9B /* BookViewController.swift */; };
 		3F1983D120E18E4000F8AA03 /* SubtitleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1983D020E18E4000F8AA03 /* SubtitleCell.swift */; };
+		3F4F71B420F5FADA00521769 /* FavouriteBooksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F4F71B320F5FADA00521769 /* FavouriteBooksViewController.swift */; };
+		3F4F71B620F5FB5F00521769 /* LocalBooksManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F4F71B520F5FB5F00521769 /* LocalBooksManager.swift */; };
 		3F61461C20E426CC00384213 /* BookTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F61461A20E426CC00384213 /* BookTableViewCell.swift */; };
 		3F61461D20E426CC00384213 /* BookTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F61461B20E426CC00384213 /* BookTableViewCell.xib */; };
 		3FBFE81920EC271800853FAE /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FBFE81820EC271800853FAE /* ImageCache.swift */; };
@@ -23,6 +25,8 @@
 /* Begin PBXFileReference section */
 		3F05611C20E629A5002BAD9B /* BookViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookViewController.swift; sourceTree = "<group>"; };
 		3F1983D020E18E4000F8AA03 /* SubtitleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubtitleCell.swift; sourceTree = "<group>"; };
+		3F4F71B320F5FADA00521769 /* FavouriteBooksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteBooksViewController.swift; sourceTree = "<group>"; };
+		3F4F71B520F5FB5F00521769 /* LocalBooksManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalBooksManager.swift; sourceTree = "<group>"; };
 		3F61461A20E426CC00384213 /* BookTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookTableViewCell.swift; sourceTree = "<group>"; };
 		3F61461B20E426CC00384213 /* BookTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BookTableViewCell.xib; sourceTree = "<group>"; };
 		3FBFE81820EC271800853FAE /* ImageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCache.swift; sourceTree = "<group>"; };
@@ -80,6 +84,8 @@
 				3F61461A20E426CC00384213 /* BookTableViewCell.swift */,
 				3F61461B20E426CC00384213 /* BookTableViewCell.xib */,
 				3F05611C20E629A5002BAD9B /* BookViewController.swift */,
+				3F4F71B320F5FADA00521769 /* FavouriteBooksViewController.swift */,
+				3F4F71B520F5FB5F00521769 /* LocalBooksManager.swift */,
 			);
 			path = biblio;
 			sourceTree = "<group>";
@@ -159,7 +165,9 @@
 				3FC57FA120DB24210011F6A6 /* ViewController.swift in Sources */,
 				3F1983D120E18E4000F8AA03 /* SubtitleCell.swift in Sources */,
 				3FC57FB120DB37CC0011F6A6 /* Secrets.swift in Sources */,
+				3F4F71B420F5FADA00521769 /* FavouriteBooksViewController.swift in Sources */,
 				3F05611D20E629A5002BAD9B /* BookViewController.swift in Sources */,
+				3F4F71B620F5FB5F00521769 /* LocalBooksManager.swift in Sources */,
 				3F61461C20E426CC00384213 /* BookTableViewCell.swift in Sources */,
 				3FBFE81920EC271800853FAE /* ImageCache.swift in Sources */,
 				3FC57F9F20DB24210011F6A6 /* AppDelegate.swift in Sources */,

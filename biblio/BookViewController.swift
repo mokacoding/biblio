@@ -28,4 +28,11 @@ class BookViewController: UIViewController {
       }
     }
   }
+
+  @IBAction func save(sender: UIButton) {
+    if var book = self.book {
+      book["googleBook"] = googleBook
+      LocalBooksManager.shared.save(book)
+    }
+  }
 }

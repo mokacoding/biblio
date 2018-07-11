@@ -9,6 +9,10 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
   var googleBooks: [URL: [String: Any]] = [:]
 
   override func viewDidLoad() {
+    title = "Top Books"
+
+    navigationController?.navigationBar.prefersLargeTitles = true
+
     tableView.dataSource = self
     tableView.delegate = self
     tableView.register(UINib(nibName: "BookTableViewCell", bundle: .none), forCellReuseIdentifier: "book-cell")
