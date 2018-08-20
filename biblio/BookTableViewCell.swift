@@ -23,6 +23,7 @@ class BookTableViewCell: UITableViewCell {
     thumbnailImageView.isHidden = true
 
     imageLoadingView.isHidden = false
+    imageLoadingView.hidesWhenStopped = true
     imageLoadingView.startAnimating()
 
     imageLoadFailLabel.isHidden = true
