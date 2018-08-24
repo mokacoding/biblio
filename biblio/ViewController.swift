@@ -127,20 +127,5 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     tableView.deselectRow(at: indexPath, animated: true)
-
-    if
-      let book = (books[indexPath.row]["book_details"] as? [[String: Any]])?.first,
-      let isbn = book["primary_isbn13"] as? String,
-      let googleBookURL = URL(string: "https://www.googleapis.com/books/v1/volumes?q=isbn:\(isbn)&key=\(Secrets.googleBooksKey)"),
-      let googleBook = googleBooks[googleBookURL]
-    {
-      let storyboard = UIStoryboard(name: "Main", bundle: Bundle(for: ViewController.self))
-
-      if let bookViewController = storyboard.instantiateViewController(withIdentifier: "book") as? BookViewController {
-        bookViewController.book = book
-        bookViewController.googleBook = googleBook
-        navigationController?.pushViewController(bookViewController, animated: true)
-      }
-    }
   }
 }
