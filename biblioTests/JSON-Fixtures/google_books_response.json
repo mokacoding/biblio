@@ -1,0 +1,82 @@
+{
+ "kind": "books#volumes",
+ "totalItems": 1,
+ "items": [
+  {
+   "kind": "books#volume",
+   "id": "2ObWDgAAQBAJ",
+   "etag": "6J5uMx8a2sQ",
+   "selfLink": "https://www.googleapis.com/books/v1/volumes/2ObWDgAAQBAJ",
+   "volumeInfo": {
+    "title": "Educated",
+    "subtitle": "A Memoir",
+    "authors": [
+     "Tara Westover"
+    ],
+    "publisher": "Random House",
+    "publishedDate": "2018-02-20",
+    "description": "#1 NEW YORK TIMES BESTSELLER • An unforgettable memoir about a young girl who, kept out of school, leaves her survivalist family and goes on to earn a PhD from Cambridge University Book Club Pick for Now Read This, from PBS NewsHour and The New York Times “A coming-of-age memoir reminiscent of The Glass Castle.”—O: The Oprah Magazine “Tara Westover is living proof that some people are flat-out, boots-always-laced-up indomitable.”—USA Today “The extremity of Westover’s upbringing emerges gradually through her telling, which only makes the telling more alluring and harrowing.”—The New York Times Book Review Tara Westover was seventeen the first time she set foot in a classroom. Born to survivalists in the mountains of Idaho, she prepared for the end of the world by stockpiling home-canned peaches and sleeping with her “head-for-the-hills” bag. In the summer she stewed herbs for her mother, a midwife and healer, and in the winter she salvaged metal in her father’s junkyard. Her father distrusted the medical establishment, so Tara never saw a doctor or nurse. Gashes and concussions, even burns from explosions, were all treated at home with herbalism. The family was so isolated from mainstream society that there was no one to ensure the children received an education, and no one to intervene when an older brother became violent. When another brother got himself into college and came back with news of the world beyond the mountain, Tara decided to try a new kind of life. She taught herself enough mathematics, grammar, and science to take the ACT and was admitted to Brigham Young University. There, she studied psychology, politics, philosophy, and history, learning for the first time about pivotal world events like the Holocaust and the Civil Rights Movement. Her quest for knowledge transformed her, taking her over oceans and across continents, to Harvard and to Cambridge University. Only then would she wonder if she’d traveled too far, if there was still a way home. Educated is an account of the struggle for self-invention. It is a tale of fierce family loyalty, and of the grief that comes from severing one’s closest ties. With the acute insight that distinguishes all great writers, Westover has crafted a universal coming-of-age story that gets to the heart of what an education is and what it offers: the perspective to see one’s life through new eyes, and the will to change it.",
+    "industryIdentifiers": [
+     {
+      "type": "ISBN_13",
+      "identifier": "9780399590511"
+     },
+     {
+      "type": "ISBN_10",
+      "identifier": "039959051X"
+     }
+    ],
+    "readingModes": {
+     "text": true,
+     "image": false
+    },
+    "pageCount": 352,
+    "printType": "BOOK",
+    "categories": [
+     "Biography & Autobiography"
+    ],
+    "averageRating": 4.0,
+    "ratingsCount": 23,
+    "maturityRating": "NOT_MATURE",
+    "allowAnonLogging": true,
+    "contentVersion": "1.12.11.0.preview.2",
+    "panelizationSummary": {
+     "containsEpubBubbles": false,
+     "containsImageBubbles": false
+    },
+    "imageLinks": {
+     "smallThumbnail": "http://books.google.com/books/content?id=2ObWDgAAQBAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+     "thumbnail": "http://books.google.com/books/content?id=2ObWDgAAQBAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api"
+    },
+    "language": "en",
+    "previewLink": "http://books.google.com.au/books?id=2ObWDgAAQBAJ&dq=isbn:9780399590511&hl=&cd=1&source=gbs_api",
+    "infoLink": "http://books.google.com.au/books?id=2ObWDgAAQBAJ&dq=isbn:9780399590511&hl=&source=gbs_api",
+    "canonicalVolumeLink": "https://books.google.com/books/about/Educated.html?hl=&id=2ObWDgAAQBAJ"
+   },
+   "saleInfo": {
+    "country": "AU",
+    "saleability": "NOT_FOR_SALE",
+    "isEbook": false
+   },
+   "accessInfo": {
+    "country": "AU",
+    "viewability": "NO_PAGES",
+    "embeddable": false,
+    "publicDomain": false,
+    "textToSpeechPermission": "ALLOWED",
+    "epub": {
+     "isAvailable": true
+    },
+    "pdf": {
+     "isAvailable": true
+    },
+    "webReaderLink": "http://play.google.com/books/reader?id=2ObWDgAAQBAJ&hl=&printsec=frontcover&source=gbs_api",
+    "accessViewStatus": "NONE",
+    "quoteSharingAllowed": false
+   },
+   "searchInfo": {
+    "textSnippet": "Only then would she wonder if she’d traveled too far, if there was still a way home. Educated is an account of the struggle for self-invention."
+   }
+  }
+ ]
+}

@@ -17,7 +17,11 @@
 		3F61461D20E426CC00384213 /* BookTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F61461B20E426CC00384213 /* BookTableViewCell.xib */; };
 		3F6413112131702400BAD870 /* NYTimesBooksStubs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6413102131702400BAD870 /* NYTimesBooksStubs.swift */; };
 		3F6413132131704400BAD870 /* nytimes_response.json in Resources */ = {isa = PBXBuildFile; fileRef = 3F6413122131704400BAD870 /* nytimes_response.json */; };
+		3F641317213171A400BAD870 /* GoogleBooksStubs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F641316213171A400BAD870 /* GoogleBooksStubs.swift */; };
+		3F64131A2131722000BAD870 /* google_books_response_no_images.json in Resources */ = {isa = PBXBuildFile; fileRef = 3F6413182131722000BAD870 /* google_books_response_no_images.json */; };
+		3F64131B2131722000BAD870 /* google_books_response.json in Resources */ = {isa = PBXBuildFile; fileRef = 3F6413192131722000BAD870 /* google_books_response.json */; };
 		3FBFE81920EC271800853FAE /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FBFE81820EC271800853FAE /* ImageCache.swift */; };
+		3FC20CB92131767100C214DC /* image.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 3FC20CB82131767100C214DC /* image.jpeg */; };
 		3FC57F9F20DB24210011F6A6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FC57F9E20DB24210011F6A6 /* AppDelegate.swift */; };
 		3FC57FA120DB24210011F6A6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FC57FA020DB24210011F6A6 /* ViewController.swift */; };
 		3FC57FA420DB24210011F6A6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3FC57FA220DB24210011F6A6 /* Main.storyboard */; };
@@ -62,7 +66,11 @@
 		3F61461B20E426CC00384213 /* BookTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BookTableViewCell.xib; sourceTree = "<group>"; };
 		3F6413102131702400BAD870 /* NYTimesBooksStubs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NYTimesBooksStubs.swift; sourceTree = "<group>"; };
 		3F6413122131704400BAD870 /* nytimes_response.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = nytimes_response.json; sourceTree = "<group>"; };
+		3F641316213171A400BAD870 /* GoogleBooksStubs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleBooksStubs.swift; sourceTree = "<group>"; };
+		3F6413182131722000BAD870 /* google_books_response_no_images.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = google_books_response_no_images.json; sourceTree = "<group>"; };
+		3F6413192131722000BAD870 /* google_books_response.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = google_books_response.json; sourceTree = "<group>"; };
 		3FBFE81820EC271800853FAE /* ImageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCache.swift; sourceTree = "<group>"; };
+		3FC20CB82131767100C214DC /* image.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = image.jpeg; sourceTree = "<group>"; };
 		3FC57F9B20DB24210011F6A6 /* biblio.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = biblio.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FC57F9E20DB24210011F6A6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3FC57FA020DB24210011F6A6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -96,8 +104,10 @@
 			isa = PBXGroup;
 			children = (
 				3F2859D6212281FC002E3918 /* DummyTests.swift */,
+				3F641316213171A400BAD870 /* GoogleBooksStubs.swift */,
+				3FC20CB82131767100C214DC /* image.jpeg */,
 				3F2859D8212281FC002E3918 /* Info.plist */,
-				3F6413122131704400BAD870 /* nytimes_response.json */,
+				3F64131C2131725D00BAD870 /* JSON-Fixtures */,
 				3F6413102131702400BAD870 /* NYTimesBooksStubs.swift */,
 			);
 			path = biblioTests;
@@ -109,6 +119,16 @@
 				3F2859DF21228341002E3918 /* OHHTTPStubs.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		3F64131C2131725D00BAD870 /* JSON-Fixtures */ = {
+			isa = PBXGroup;
+			children = (
+				3F6413182131722000BAD870 /* google_books_response_no_images.json */,
+				3F6413192131722000BAD870 /* google_books_response.json */,
+				3F6413122131704400BAD870 /* nytimes_response.json */,
+			);
+			path = "JSON-Fixtures";
 			sourceTree = "<group>";
 		};
 		3FC57F9220DB24210011F6A6 = {
@@ -236,6 +256,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				3F6413132131704400BAD870 /* nytimes_response.json in Resources */,
+				3FC20CB92131767100C214DC /* image.jpeg in Resources */,
+				3F64131B2131722000BAD870 /* google_books_response.json in Resources */,
+				3F64131A2131722000BAD870 /* google_books_response_no_images.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -273,6 +296,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3F641317213171A400BAD870 /* GoogleBooksStubs.swift in Sources */,
 				3F6413112131702400BAD870 /* NYTimesBooksStubs.swift in Sources */,
 				3F2859D7212281FC002E3918 /* DummyTests.swift in Sources */,
 			);
