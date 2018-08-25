@@ -3,9 +3,15 @@ import UIKit
 
 extension ViewController {
 
-  static func fromStoryboard() -> ViewController {
-    return UIStoryboard(name: "Main", bundle: Bundle(for: ViewController.self))
+  static func fromStoryboard(
+    cache: [URL: [String: Any]] = [:]
+  ) -> ViewController {
+    let vc = UIStoryboard(name: "Main", bundle: Bundle(for: ViewController.self))
       .instantiateViewController(withIdentifier: "books_list") as! ViewController
+
+    vc.googleBooks = cache
+
+    return vc
   }
 
   func cell(atRow row: Int) -> BookTableViewCell? {
@@ -20,3 +26,5 @@ extension ViewController {
     }
   }
 }
+
+private let defaultURL = URL(string: "https://www.googleapis.com/books/v1/volumes?q=isbn:9780062872746&key=\(Secrets.googleBooksKey)")!

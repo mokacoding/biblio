@@ -41,6 +41,32 @@ class ViewControllerHighLevelTests: XCTestCase {
     waitForExpectations(timeout: 1, handler: .none)
   }
 
+  func test_books_view_controller_loads_list_with_image_if_book_is_in_cache() {
+    let viewController = ViewController.fromStoryboard(
+      cache: [URL(string: "https://www.googleapis.com/books/v1/volumes?q=isbn:9780062872746&key=\(Secrets.googleBooksKey)")!: GoogleBooksStubs.fixtureJSON]
+    )
+
+    NYTimesBooksStubs.stubNYTimesRequestWithSuccess()
+    GoogleBooksStubs.stubBooksRequestWithFailure()
+    GoogleBooksStubs.stubImageRequestWithSuccess()
+
+    _ = viewController.view
+
+    _ = self.expectation(for: ViewController.moreThanOneVisibleCell(), evaluatedWith: viewController, handler: .none)
+
+    waitForExpectations(timeout: 1, handler: .none)
+
+    guard let firstCell = viewController.cell(atRow: 0) else {
+      return XCTFail("Could not get first cell")
+    }
+
+    XCTAssertEqual(firstCell.titleLabel.text, NYTimesBooksStubs.firstBookFromJSONTitle)
+    XCTAssertEqual(firstCell.descriptionLabel.text, NYTimesBooksStubs.firstBookFromJSONDescription)
+
+    _ = expectation(for: BookTableViewCell.imageIsLoaded(), evaluatedWith: firstCell, handler: .none)
+    waitForExpectations(timeout: 1, handler: .none)
+  }
+
   func test_books_view_controller_shows_error_label_if_google_book_not_found() {
     let viewController = ViewController.fromStoryboard()
 
@@ -85,6 +111,8 @@ class ViewControllerHighLevelTests: XCTestCase {
 
     waitForExpectations(timeout: 1, handler: .none)
   }
+
+  
 }
 
 extension ViewControllerHighLevelTests {

@@ -58,14 +58,10 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
               let thumbnailURLString = (imageLinks["thumbnail"] as? String)?.replacingOccurrences(of: "http://", with: "https://"),
               let thumbnailURL = URL(string: thumbnailURLString)
             {
-              ImageCache.shared.image(for: thumbnailURL) { image in
+              ImageCache.shared.image(for: thumbnailURL) { [weak self] image in
                 if let image = image {
                   DispatchQueue.main.async {
-                    bookCell.thumbnailImageView.isHidden = false
-                    bookCell.thumbnailImageView.image = image
-                    bookCell.imageLoadingView.stopAnimating()
-                    bookCell.setNeedsLayout()
-                    bookCell.layoutIfNeeded()
+                    self?.set(cell: bookCell, with: image)
                   }
                 } else {
                   DispatchQueue.main.async {
@@ -94,14 +90,10 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
               {
                 self?.googleBooks[googleBookURL] = googleBookDict
 
-                ImageCache.shared.image(for: thumbnailURL) { image in
+                ImageCache.shared.image(for: thumbnailURL) { [weak self] image in
                   if let image = image {
                     DispatchQueue.main.async {
-                      bookCell.thumbnailImageView.isHidden = false
-                      bookCell.thumbnailImageView.image = image
-                      bookCell.imageLoadingView.stopAnimating()
-                      bookCell.setNeedsLayout()
-                      bookCell.layoutIfNeeded()
+                      self?.set(cell: bookCell, with: image)
                     }
                   } else {
                     bookCell.thumbnailImageView.isHidden = true
@@ -127,5 +119,13 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     tableView.deselectRow(at: indexPath, animated: true)
+  }
+
+  private func set(cell: BookTableViewCell, with image: UIImage) {
+    cell.thumbnailImageView.isHidden = false
+    cell.thumbnailImageView.image = image
+    cell.imageLoadingView.stopAnimating()
+    cell.setNeedsLayout()
+    cell.layoutIfNeeded()
   }
 }
