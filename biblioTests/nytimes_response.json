@@ -1,0 +1,661 @@
+{
+	"status": "OK",
+	"copyright": "Copyright (c) 2018 The New York Times Company.  All Rights Reserved.",
+	"num_results": 15,
+	"last_modified": "2018-08-09T02:38:01-04:00",
+	"results": [{
+		"list_name": "Combined Print and E-Book Nonfiction",
+		"display_name": "Combined Print & E-Book Nonfiction",
+		"bestsellers_date": "2018-08-04",
+		"published_date": "2018-08-19",
+		"rank": 1,
+		"rank_last_week": 1,
+		"weeks_on_list": 2,
+		"asterisk": 0,
+		"dagger": 0,
+		"amazon_product_url": "https:\/\/www.amazon.com\/Russia-Hoax-Illicit-Hillary-Clinton\/dp\/0062872745?tag=NYTBS-20",
+		"isbns": [{
+			"isbn10": "0062872745",
+			"isbn13": "9780062872746"
+		}, {
+			"isbn10": "0062872753",
+			"isbn13": "9780062872753"
+		}, {
+			"isbn10": "0062876864",
+			"isbn13": "9780062876867"
+		}, {
+			"isbn10": "1982529105",
+			"isbn13": "9781982529109"
+		}],
+		"book_details": [{
+			"title": "THE RUSSIA HOAX",
+			"description": "The Fox News analyst makes his case for why the F.B.I. investigation into collusion between the Trump campaign and Russia is without legal merit.",
+			"contributor": "by Gregg Jarrett",
+			"author": "Gregg Jarrett",
+			"contributor_note": "",
+			"price": 0,
+			"age_group": "",
+			"publisher": "Broadside",
+			"primary_isbn13": "9780062872746",
+			"primary_isbn10": "0062872745"
+		}],
+		"reviews": [{
+			"book_review_link": "",
+			"first_chapter_link": "",
+			"sunday_review_link": "",
+			"article_chapter_link": ""
+		}]
+	}, {
+		"list_name": "Combined Print and E-Book Nonfiction",
+		"display_name": "Combined Print & E-Book Nonfiction",
+		"bestsellers_date": "2018-08-04",
+		"published_date": "2018-08-19",
+		"rank": 2,
+		"rank_last_week": 2,
+		"weeks_on_list": 3,
+		"asterisk": 0,
+		"dagger": 0,
+		"amazon_product_url": "https:\/\/www.amazon.com\/Liars-Leakers-Liberals-Anti-Trump-Conspiracy\/dp\/1546083421?tag=NYTBS-20",
+		"isbns": [{
+			"isbn10": "1546083421",
+			"isbn13": "9781546083429"
+		}, {
+			"isbn10": "1546083413",
+			"isbn13": "9781546083412"
+		}, {
+			"isbn10": "1549112732",
+			"isbn13": "9781549112737"
+		}, {
+			"isbn10": "1549143506",
+			"isbn13": "9781549143502"
+		}],
+		"book_details": [{
+			"title": "LIARS, LEAKERS AND LIBERALS",
+			"description": "The legal analyst and Fox News host argues in favor of President Trump.",
+			"contributor": "by Jeanine Pirro",
+			"author": "Jeanine Pirro",
+			"contributor_note": "",
+			"price": 0,
+			"age_group": "",
+			"publisher": "Center Street",
+			"primary_isbn13": "9781546083429",
+			"primary_isbn10": "1546083421"
+		}],
+		"reviews": [{
+			"book_review_link": "",
+			"first_chapter_link": "",
+			"sunday_review_link": "",
+			"article_chapter_link": ""
+		}]
+	}, {
+		"list_name": "Combined Print and E-Book Nonfiction",
+		"display_name": "Combined Print & E-Book Nonfiction",
+		"bestsellers_date": "2018-08-04",
+		"published_date": "2018-08-19",
+		"rank": 3,
+		"rank_last_week": 3,
+		"weeks_on_list": 24,
+		"asterisk": 0,
+		"dagger": 0,
+		"amazon_product_url": "https:\/\/www.amazon.com\/Educated-Memoir-Tara-Westover\/dp\/0399590501?tag=NYTBS-20",
+		"isbns": [{
+			"isbn10": "0399590501",
+			"isbn13": "9780399590504"
+		}, {
+			"isbn10": "039959051X",
+			"isbn13": "9780399590511"
+		}, {
+			"isbn10": "0525589988",
+			"isbn13": "9780525589983"
+		}, {
+			"isbn10": "0525528059",
+			"isbn13": "9780525528050"
+		}],
+		"book_details": [{
+			"title": "EDUCATED",
+			"description": "The daughter of survivalists, who is kept out of school, educates herself enough to leave home for university.",
+			"contributor": "by Tara Westover",
+			"author": "Tara Westover",
+			"contributor_note": "",
+			"price": 0,
+			"age_group": "",
+			"publisher": "Random House",
+			"primary_isbn13": "9780399590511",
+			"primary_isbn10": "039959051X"
+		}],
+		"reviews": [{
+			"book_review_link": "https:\/\/www.nytimes.com\/2018\/03\/01\/books\/review\/tara-westover-educated.html",
+			"first_chapter_link": "",
+			"sunday_review_link": "",
+			"article_chapter_link": ""
+		}]
+	}, {
+		"list_name": "Combined Print and E-Book Nonfiction",
+		"display_name": "Combined Print & E-Book Nonfiction",
+		"bestsellers_date": "2018-08-04",
+		"published_date": "2018-08-19",
+		"rank": 4,
+		"rank_last_week": 0,
+		"weeks_on_list": 1,
+		"asterisk": 0,
+		"dagger": 0,
+		"amazon_product_url": "https:\/\/www.amazon.com\/Gutfeld-Monologues-Classic-Rants-Five\/dp\/1501190725?tag=NYTBS-20",
+		"isbns": [{
+			"isbn10": "1501190725",
+			"isbn13": "9781501190728"
+		}, {
+			"isbn10": "1501190741",
+			"isbn13": "9781501190742"
+		}],
+		"book_details": [{
+			"title": "THE GUTFELD MONOLOGUES",
+			"description": "A collection of rants by the Fox News host.",
+			"contributor": "by Greg Gutfeld",
+			"author": "Greg Gutfeld",
+			"contributor_note": "",
+			"price": 0,
+			"age_group": "",
+			"publisher": "Threshold Editions",
+			"primary_isbn13": "9781501190728",
+			"primary_isbn10": "1501190725"
+		}],
+		"reviews": [{
+			"book_review_link": "",
+			"first_chapter_link": "",
+			"sunday_review_link": "",
+			"article_chapter_link": ""
+		}]
+	}, {
+		"list_name": "Combined Print and E-Book Nonfiction",
+		"display_name": "Combined Print & E-Book Nonfiction",
+		"bestsellers_date": "2018-08-04",
+		"published_date": "2018-08-19",
+		"rank": 5,
+		"rank_last_week": 7,
+		"weeks_on_list": 33,
+		"asterisk": 0,
+		"dagger": 0,
+		"amazon_product_url": "http:\/\/www.amazon.com\/Sapiens-A-Brief-History-Humankind-ebook\/dp\/B00ICN066A?tag=NYTBS-20",
+		"isbns": [{
+			"isbn10": "0062316095",
+			"isbn13": "9780062316097"
+		}, {
+			"isbn10": "0062316109",
+			"isbn13": "9780062316103"
+		}, {
+			"isbn10": "0062796232",
+			"isbn13": "9780062796233"
+		}, {
+			"isbn10": "1494576902",
+			"isbn13": "9781494576905"
+		}, {
+			"isbn10": "0062316117",
+			"isbn13": "9780062316110"
+		}, {
+			"isbn10": "1494506904",
+			"isbn13": "9781494506902"
+		}, {
+			"isbn10": "1494556901",
+			"isbn13": "9781494556907"
+		}],
+		"book_details": [{
+			"title": "SAPIENS",
+			"description": "How Homo sapiens became Earth\u2019s dominant species.",
+			"contributor": "by Yuval Noah Harari",
+			"author": "Yuval Noah Harari",
+			"contributor_note": "",
+			"price": 0,
+			"age_group": "",
+			"publisher": "Harper",
+			"primary_isbn13": "9780062316110",
+			"primary_isbn10": "0062316117"
+		}],
+		"reviews": [{
+			"book_review_link": "",
+			"first_chapter_link": "",
+			"sunday_review_link": "",
+			"article_chapter_link": ""
+		}]
+	}, {
+		"list_name": "Combined Print and E-Book Nonfiction",
+		"display_name": "Combined Print & E-Book Nonfiction",
+		"bestsellers_date": "2018-08-04",
+		"published_date": "2018-08-19",
+		"rank": 6,
+		"rank_last_week": 6,
+		"weeks_on_list": 4,
+		"asterisk": 0,
+		"dagger": 0,
+		"amazon_product_url": "https:\/\/www.amazon.com\/Indianapolis-Disaster-Fifty-Year-Exonerate-Innocent\/dp\/1501135945?tag=NYTBS-20",
+		"isbns": [{
+			"isbn10": "1501135945",
+			"isbn13": "9781501135941"
+		}, {
+			"isbn10": "1501135961",
+			"isbn13": "9781501135965"
+		}],
+		"book_details": [{
+			"title": "INDIANAPOLIS",
+			"description": "A newly researched look into the sinking of the U.S.S. Indianapolis, the story of the survivors and the fight to exonerate the court-martialed skipper.",
+			"contributor": "by Lynn Vincent and Sara Vladic",
+			"author": "Lynn Vincent and Sara Vladic",
+			"contributor_note": "",
+			"price": 0,
+			"age_group": "",
+			"publisher": "Simon & Schuster",
+			"primary_isbn13": "9781501135941",
+			"primary_isbn10": "1501135945"
+		}],
+		"reviews": [{
+			"book_review_link": "",
+			"first_chapter_link": "",
+			"sunday_review_link": "",
+			"article_chapter_link": ""
+		}]
+	}, {
+		"list_name": "Combined Print and E-Book Nonfiction",
+		"display_name": "Combined Print & E-Book Nonfiction",
+		"bestsellers_date": "2018-08-04",
+		"published_date": "2018-08-19",
+		"rank": 7,
+		"rank_last_week": 4,
+		"weeks_on_list": 10,
+		"asterisk": 0,
+		"dagger": 0,
+		"amazon_product_url": "https:\/\/www.amazon.com\/Calypso-David-Sedaris\/dp\/0316392383?tag=NYTBS-20",
+		"isbns": [{
+			"isbn10": "0316392383",
+			"isbn13": "9780316392389"
+		}, {
+			"isbn10": "0316392367",
+			"isbn13": "9780316392365"
+		}, {
+			"isbn10": "0316392359",
+			"isbn13": "9780316392358"
+		}, {
+			"isbn10": "1478964162",
+			"isbn13": "9781478964162"
+		}, {
+			"isbn10": "1478964170",
+			"isbn13": "9781478964179"
+		}, {
+			"isbn10": "1549198319",
+			"isbn13": "9781549198311"
+		}, {
+			"isbn10": "1549198327",
+			"isbn13": "9781549198328"
+		}],
+		"book_details": [{
+			"title": "CALYPSO",
+			"description": "A collection of comedic stories on mortality, middle age and a beach house dubbed the Sea Section.",
+			"contributor": "by David Sedaris",
+			"author": "David Sedaris",
+			"contributor_note": "",
+			"price": 0,
+			"age_group": "",
+			"publisher": "Little, Brown",
+			"primary_isbn13": "9780316392389",
+			"primary_isbn10": "0316392383"
+		}],
+		"reviews": [{
+			"book_review_link": "https:\/\/www.nytimes.com\/2018\/05\/25\/books\/review\/david-sedaris-calypso.html",
+			"first_chapter_link": "",
+			"sunday_review_link": "",
+			"article_chapter_link": ""
+		}]
+	}, {
+		"list_name": "Combined Print and E-Book Nonfiction",
+		"display_name": "Combined Print & E-Book Nonfiction",
+		"bestsellers_date": "2018-08-04",
+		"published_date": "2018-08-19",
+		"rank": 8,
+		"rank_last_week": 11,
+		"weeks_on_list": 59,
+		"asterisk": 0,
+		"dagger": 0,
+		"amazon_product_url": "https:\/\/www.amazon.com\/Killers-Flower-Moon-Osage-Murders\/dp\/0385534248?tag=NYTBS-20",
+		"isbns": [{
+			"isbn10": "0385534248",
+			"isbn13": "9780385534246"
+		}, {
+			"isbn10": "0385534256",
+			"isbn13": "9780385534253"
+		}, {
+			"isbn10": "1524755931",
+			"isbn13": "9781524755935"
+		}, {
+			"isbn10": "0307742482",
+			"isbn13": "9780307742483"
+		}],
+		"book_details": [{
+			"title": "KILLERS OF THE FLOWER MOON",
+			"description": "The story of a murder spree in 1920s Oklahoma that targeted Osage Indians, whose lands contained oil.",
+			"contributor": "by David Grann",
+			"author": "David Grann",
+			"contributor_note": "",
+			"price": 0,
+			"age_group": "",
+			"publisher": "Doubleday",
+			"primary_isbn13": "9780307742483",
+			"primary_isbn10": "0307742482"
+		}],
+		"reviews": [{
+			"book_review_link": "https:\/\/www.nytimes.com\/2017\/04\/28\/books\/review\/killers-of-the-flower-moon-david-grann.html",
+			"first_chapter_link": "",
+			"sunday_review_link": "",
+			"article_chapter_link": ""
+		}]
+	}, {
+		"list_name": "Combined Print and E-Book Nonfiction",
+		"display_name": "Combined Print & E-Book Nonfiction",
+		"bestsellers_date": "2018-08-04",
+		"published_date": "2018-08-19",
+		"rank": 9,
+		"rank_last_week": 5,
+		"weeks_on_list": 11,
+		"asterisk": 0,
+		"dagger": 0,
+		"amazon_product_url": "https:\/\/www.amazon.com\/Bad-Blood-Secrets-Silicon-Startup-ebook\/dp\/B078VW3VM7?tag=NYTBS-20",
+		"isbns": [{
+			"isbn10": "152473165X",
+			"isbn13": "9781524731656"
+		}, {
+			"isbn10": "1524731668",
+			"isbn13": "9781524731663"
+		}, {
+			"isbn10": "1984833634",
+			"isbn13": "9781984833631"
+		}],
+		"book_details": [{
+			"title": "BAD BLOOD",
+			"description": "The rise and fall of Theranos, the biotech startup that failed to deliver on its promise to make blood testing more efficient.",
+			"contributor": "by John Carreyrou",
+			"author": "John Carreyrou",
+			"contributor_note": "",
+			"price": 0,
+			"age_group": "",
+			"publisher": "Knopf",
+			"primary_isbn13": "9781524731663",
+			"primary_isbn10": "1524731668"
+		}],
+		"reviews": [{
+			"book_review_link": "https:\/\/www.nytimes.com\/2018\/05\/21\/books\/review\/bad-blood-john-carreyrou.html",
+			"first_chapter_link": "",
+			"sunday_review_link": "",
+			"article_chapter_link": ""
+		}]
+	}, {
+		"list_name": "Combined Print and E-Book Nonfiction",
+		"display_name": "Combined Print & E-Book Nonfiction",
+		"bestsellers_date": "2018-08-04",
+		"published_date": "2018-08-19",
+		"rank": 10,
+		"rank_last_week": 0,
+		"weeks_on_list": 1,
+		"asterisk": 0,
+		"dagger": 0,
+		"amazon_product_url": "https:\/\/www.amazon.com\/Death-Nation-Plantation-Politics-Democratic\/dp\/1250163773?tag=NYTBS-20",
+		"isbns": [{
+			"isbn10": "None",
+			"isbn13": "9780143177289"
+		}, {
+			"isbn10": "1250163773",
+			"isbn13": "9781250163776"
+		}, {
+			"isbn10": "1250167825",
+			"isbn13": "9781250167828"
+		}],
+		"book_details": [{
+			"title": "DEATH OF A NATION",
+			"description": "A companion text to the conservative author and filmmaker\u2019s documentary, which offers an alternative history of the Democratic Party.",
+			"contributor": "by Dinesh D'Souza",
+			"author": "Dinesh D'Souza",
+			"contributor_note": "",
+			"price": 0,
+			"age_group": "",
+			"publisher": "All Points",
+			"primary_isbn13": "9781250163776",
+			"primary_isbn10": "1250163773"
+		}],
+		"reviews": [{
+			"book_review_link": "",
+			"first_chapter_link": "",
+			"sunday_review_link": "",
+			"article_chapter_link": ""
+		}]
+	}, {
+		"list_name": "Combined Print and E-Book Nonfiction",
+		"display_name": "Combined Print & E-Book Nonfiction",
+		"bestsellers_date": "2018-08-04",
+		"published_date": "2018-08-19",
+		"rank": 11,
+		"rank_last_week": 9,
+		"weeks_on_list": 10,
+		"asterisk": 0,
+		"dagger": 0,
+		"amazon_product_url": "http:\/\/www.amazon.com\/Kitchen-Confidential-Updated-Edition-Adventures\/dp\/0060899220?tag=NYTBS-20",
+		"isbns": [{
+			"isbn10": "0060899220",
+			"isbn13": "9780060899226"
+		}, {
+			"isbn10": "1596917245",
+			"isbn13": "9781596917248"
+		}, {
+			"isbn10": "0062231375",
+			"isbn13": "9780062231376"
+		}, {
+			"isbn10": "1408820854",
+			"isbn13": "9781408820858"
+		}, {
+			"isbn10": "158234082X",
+			"isbn13": "9781582340821"
+		}, {
+			"isbn10": "0747553556",
+			"isbn13": "9780747553557"
+		}, {
+			"isbn10": "073933235X",
+			"isbn13": "9780739332351"
+		}],
+		"book_details": [{
+			"title": "KITCHEN CONFIDENTIAL",
+			"description": "A memoir-expos\u00e9 of the restaurant world. Originally published in 2000.",
+			"contributor": "by Anthony Bourdain",
+			"author": "Anthony Bourdain",
+			"contributor_note": "",
+			"price": 0,
+			"age_group": "",
+			"publisher": "Ecco",
+			"primary_isbn13": "9780060899226",
+			"primary_isbn10": "0060899220"
+		}],
+		"reviews": [{
+			"book_review_link": "",
+			"first_chapter_link": "",
+			"sunday_review_link": "https:\/\/www.nytimes.com\/2001\/05\/20\/books\/new-noteworthy-paperbacks-272809.html",
+			"article_chapter_link": ""
+		}]
+	}, {
+		"list_name": "Combined Print and E-Book Nonfiction",
+		"display_name": "Combined Print & E-Book Nonfiction",
+		"bestsellers_date": "2018-08-04",
+		"published_date": "2018-08-19",
+		"rank": 12,
+		"rank_last_week": 12,
+		"weeks_on_list": 13,
+		"asterisk": 0,
+		"dagger": 0,
+		"amazon_product_url": "https:\/\/www.amazon.com\/Soul-America-Battle-Better-Angels\/dp\/0399589813?tag=NYTBS-20",
+		"isbns": [{
+			"isbn10": "0399589813",
+			"isbn13": "9780399589812"
+		}, {
+			"isbn10": "039958983X",
+			"isbn13": "9780399589836"
+		}, {
+			"isbn10": "1984832085",
+			"isbn13": "9781984832085"
+		}, {
+			"isbn10": "0525640037",
+			"isbn13": "9780525640035"
+		}],
+		"book_details": [{
+			"title": "THE SOUL OF AMERICA",
+			"description": "The present political climate is contextualized through the lens of difficult moments in American history.",
+			"contributor": "by Jon Meacham",
+			"author": "Jon Meacham",
+			"contributor_note": "",
+			"price": 0,
+			"age_group": "",
+			"publisher": "Random House",
+			"primary_isbn13": "9780399589812",
+			"primary_isbn10": "0399589813"
+		}],
+		"reviews": [{
+			"book_review_link": "https:\/\/www.nytimes.com\/2018\/05\/21\/books\/review\/jon-meacham-soul-of-america.html",
+			"first_chapter_link": "",
+			"sunday_review_link": "",
+			"article_chapter_link": ""
+		}]
+	}, {
+		"list_name": "Combined Print and E-Book Nonfiction",
+		"display_name": "Combined Print & E-Book Nonfiction",
+		"bestsellers_date": "2018-08-04",
+		"published_date": "2018-08-19",
+		"rank": 13,
+		"rank_last_week": 8,
+		"weeks_on_list": 58,
+		"asterisk": 0,
+		"dagger": 0,
+		"amazon_product_url": "https:\/\/www.amazon.com\/Astrophysics-People-Hurry-deGrasse-Tyson\/dp\/0393609391?tag=NYTBS-20",
+		"isbns": [{
+			"isbn10": "0393609391",
+			"isbn13": "9780393609394"
+		}, {
+			"isbn10": "0393609405",
+			"isbn13": "9780393609400"
+		}, {
+			"isbn10": "1432843524",
+			"isbn13": "9781432843526"
+		}, {
+			"isbn10": "1538408015",
+			"isbn13": "9781538408018"
+		}, {
+			"isbn10": "1538408007",
+			"isbn13": "9781538408001"
+		}, {
+			"isbn10": "1538408031",
+			"isbn13": "9781538408032"
+		}, {
+			"isbn10": "1538408023",
+			"isbn13": "9781538408025"
+		}],
+		"book_details": [{
+			"title": "ASTROPHYSICS FOR PEOPLE IN A HURRY",
+			"description": "A straightforward, easy-to-understand introduction to the laws that govern the universe.",
+			"contributor": "by Neil deGrasse Tyson",
+			"author": "Neil deGrasse Tyson",
+			"contributor_note": "",
+			"price": 0,
+			"age_group": "",
+			"publisher": "Norton",
+			"primary_isbn13": "9780393609394",
+			"primary_isbn10": "0393609391"
+		}],
+		"reviews": [{
+			"book_review_link": "",
+			"first_chapter_link": "",
+			"sunday_review_link": "",
+			"article_chapter_link": ""
+		}]
+	}, {
+		"list_name": "Combined Print and E-Book Nonfiction",
+		"display_name": "Combined Print & E-Book Nonfiction",
+		"bestsellers_date": "2018-08-04",
+		"published_date": "2018-08-19",
+		"rank": 14,
+		"rank_last_week": 10,
+		"weeks_on_list": 26,
+		"asterisk": 0,
+		"dagger": 0,
+		"amazon_product_url": "http:\/\/www.amazon.com\/Things-That-Matter-Passions-Pastimes\/dp\/0385349173?tag=NYTBS-20",
+		"isbns": [{
+			"isbn10": "0385349173",
+			"isbn13": "9780385349178"
+		}, {
+			"isbn10": "0385349181",
+			"isbn13": "9780385349185"
+		}, {
+			"isbn10": "0553398326",
+			"isbn13": "9780553398328"
+		}, {
+			"isbn10": "0804194513",
+			"isbn13": "9780804194518"
+		}, {
+			"isbn10": "038534919X",
+			"isbn13": "9780385349192"
+		}],
+		"book_details": [{
+			"title": "THINGS THAT MATTER",
+			"description": "Three decades\u2019 worth of essays from the recently deceased conservative columnist.",
+			"contributor": "by Charles Krauthammer",
+			"author": "Charles Krauthammer",
+			"contributor_note": "",
+			"price": 0,
+			"age_group": "",
+			"publisher": "Crown Forum",
+			"primary_isbn13": "9780385349192",
+			"primary_isbn10": "038534919X"
+		}],
+		"reviews": [{
+			"book_review_link": "",
+			"first_chapter_link": "",
+			"sunday_review_link": "",
+			"article_chapter_link": ""
+		}]
+	}, {
+		"list_name": "Combined Print and E-Book Nonfiction",
+		"display_name": "Combined Print & E-Book Nonfiction",
+		"bestsellers_date": "2018-08-04",
+		"published_date": "2018-08-19",
+		"rank": 15,
+		"rank_last_week": 13,
+		"weeks_on_list": 12,
+		"asterisk": 0,
+		"dagger": 0,
+		"amazon_product_url": "https:\/\/www.amazon.com\/Change-Your-Mind-Consciousness-Transcendence\/dp\/1594204225?tag=NYTBS-20",
+		"isbns": [{
+			"isbn10": "1594204225",
+			"isbn13": "9781594204227"
+		}, {
+			"isbn10": "0525558942",
+			"isbn13": "9780525558941"
+		}, {
+			"isbn10": "0525627162",
+			"isbn13": "9780525627166"
+		}, {
+			"isbn10": "0525627154",
+			"isbn13": "9780525627159"
+		}, {
+			"isbn10": "0525631941",
+			"isbn13": "9780525631941"
+		}],
+		"book_details": [{
+			"title": "HOW TO CHANGE YOUR MIND",
+			"description": "A personal account of how psychedelics might help the mentally ill and people dealing with everyday challenges.",
+			"contributor": "by Michael Pollan",
+			"author": "Michael Pollan",
+			"contributor_note": "",
+			"price": 0,
+			"age_group": "",
+			"publisher": "Penguin Press",
+			"primary_isbn13": "9781594204227",
+			"primary_isbn10": "1594204225"
+		}],
+		"reviews": [{
+			"book_review_link": "https:\/\/www.nytimes.com\/2018\/06\/04\/books\/review\/michael-pollan-how-to-change-your-mind.html",
+			"first_chapter_link": "",
+			"sunday_review_link": "",
+			"article_chapter_link": ""
+		}]
+	}]
+}
