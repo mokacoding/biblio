@@ -7,6 +7,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 
   var books: [[String: Any]] = []
   var googleBooks: [URL: [String: Any]] = [:]
+  var imageCache: UIImageGetter = ImageCache.shared
 
   override func viewDidLoad() {
     title = "Top Books"
@@ -58,7 +59,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
               let thumbnailURLString = (imageLinks["thumbnail"] as? String)?.replacingOccurrences(of: "http://", with: "https://"),
               let thumbnailURL = URL(string: thumbnailURLString)
             {
-              ImageCache.shared.image(for: thumbnailURL) { [weak self] image in
+              self?.imageCache.image(for: thumbnailURL) { [weak self] image in
                 if let image = image {
                   DispatchQueue.main.async {
                     self?.set(cell: bookCell, with: image)
@@ -90,22 +91,20 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
               {
                 self?.googleBooks[googleBookURL] = googleBookDict
 
-                ImageCache.shared.image(for: thumbnailURL) { [weak self] image in
+                self?.imageCache.image(for: thumbnailURL) { [weak self] image in
                   if let image = image {
                     DispatchQueue.main.async {
                       self?.set(cell: bookCell, with: image)
                     }
                   } else {
-                    bookCell.thumbnailImageView.isHidden = true
-                    bookCell.imageLoadingView.stopAnimating()
-                    bookCell.imageLoadFailLabel.isHidden = false
+                    DispatchQueue.main.async {
+                      self?.displayImageFailThumbnail(cell: bookCell)
+                    }
                   }
                 }
               } else {
-                DispatchQueue.main.async {
-                  bookCell.thumbnailImageView.isHidden = true
-                  bookCell.imageLoadingView.stopAnimating()
-                  bookCell.imageLoadFailLabel.isHidden = false
+                DispatchQueue.main.async { [weak self] in
+                  self?.displayImageFailThumbnail(cell: bookCell)
                 }
               }
             }.resume()
@@ -127,5 +126,11 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     cell.imageLoadingView.stopAnimating()
     cell.setNeedsLayout()
     cell.layoutIfNeeded()
+  }
+
+  private func displayImageFailThumbnail(cell: BookTableViewCell) {
+    cell.thumbnailImageView.isHidden = true
+    cell.imageLoadingView.stopAnimating()
+    cell.imageLoadFailLabel.isHidden = false
   }
 }

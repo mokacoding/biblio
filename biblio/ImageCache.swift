@@ -1,7 +1,12 @@
 import Foundation
 import UIKit
 
-class ImageCache {
+protocol UIImageGetter {
+
+  func image(for url: URL, completion: (UIImage?) -> ())
+}
+
+class ImageCache: UIImageGetter {
 
   static let shared = ImageCache()
 

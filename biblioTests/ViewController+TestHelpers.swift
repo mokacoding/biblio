@@ -4,12 +4,14 @@ import UIKit
 extension ViewController {
 
   static func fromStoryboard(
-    cache: [URL: [String: Any]] = [:]
+    cache: [URL: [String: Any]] = [:],
+    imageCache: UIImageGetter = UIImageGetterStub()
   ) -> ViewController {
     let vc = UIStoryboard(name: "Main", bundle: Bundle(for: ViewController.self))
       .instantiateViewController(withIdentifier: "books_list") as! ViewController
 
     vc.googleBooks = cache
+    vc.imageCache = imageCache
 
     return vc
   }

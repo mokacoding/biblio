@@ -112,7 +112,29 @@ class ViewControllerHighLevelTests: XCTestCase {
     waitForExpectations(timeout: 1, handler: .none)
   }
 
-  
+  func test_books_view_controller_shows_error_label_if_google_book_found_but_image_cache_fails() {
+    let viewController = ViewController.fromStoryboard(imageCache: UIImageGetterStub(image: .none))
+
+    NYTimesBooksStubs.stubNYTimesRequestWithSuccess()
+    GoogleBooksStubs.stubBooksRequestWithSuccess()
+    // This is stubbed as a success, to ensure that the error will be shown because the image
+    // request is not made, not because of a failed image requet.
+    GoogleBooksStubs.stubImageRequestWithSuccess()
+
+    _ = viewController.view
+
+    _ = self.expectation(for: ViewController.moreThanOneVisibleCell(), evaluatedWith: viewController, handler: .none)
+
+    waitForExpectations(timeout: 1, handler: .none)
+
+    guard let cell = viewController.cell(atRow: 0) else {
+      return XCTFail("Could not get first cell")
+    }
+
+    _ = expectation(for: BookTableViewCell.errorLabelIsShown(), evaluatedWith: cell, handler: .none)
+
+    waitForExpectations(timeout: 1, handler: .none)
+  }
 }
 
 extension ViewControllerHighLevelTests {
