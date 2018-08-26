@@ -42,70 +42,52 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     let cell = tableView.dequeueReusableCell(withIdentifier: "book-cell", for: indexPath)
     guard let bookCell = cell as? BookTableViewCell else { return cell }
 
-    if let bookDetails = (books[indexPath.row]["book_details"] as? [[String: Any]])?.first {
-      bookCell.titleLabel?.text = bookDetails["title"] as? String
-      bookCell.descriptionLabel?.text = bookDetails["description"] as? String
-      bookCell.thumbnailImageView.contentMode = .scaleAspectFit
+    guard let bookDetails = (books[indexPath.row]["book_details"] as? [[String: Any]])?.first else {
+      return cell
+    }
 
-      DispatchQueue.global().async { [weak self] in
+    bookCell.titleLabel?.text = bookDetails["title"] as? String
+    bookCell.descriptionLabel?.text = bookDetails["description"] as? String
+    bookCell.thumbnailImageView.contentMode = .scaleAspectFit
+
+    DispatchQueue.global().async { [weak self] in
+      guard
+        let isbn = bookDetails["primary_isbn13"] as? String,
+        let googleBookURL = URL(string: "https://www.googleapis.com/books/v1/volumes?q=isbn:\(isbn)&key=\(Secrets.googleBooksKey)")
+      else { return }
+
+      if let googleBook = self?.googleBooks[googleBookURL] {
         if
-          let isbn = bookDetails["primary_isbn13"] as? String,
-          let googleBookURL = URL(string: "https://www.googleapis.com/books/v1/volumes?q=isbn:\(isbn)&key=\(Secrets.googleBooksKey)")
+          let bookInfo = (googleBook["items"] as? [[String: Any]])?.first?["volumeInfo"] as? [String: Any],
+          let imageLinks = bookInfo["imageLinks"] as? [String: Any],
+          let thumbnailURLString = (imageLinks["thumbnail"] as? String)?.replacingOccurrences(of: "http://", with: "https://"),
+          let thumbnailURL = URL(string: thumbnailURLString)
         {
-          if let googleBook = self?.googleBooks[googleBookURL] {
-            if
-              let bookInfo = (googleBook["items"] as? [[String: Any]])?.first?["volumeInfo"] as? [String: Any],
-              let imageLinks = bookInfo["imageLinks"] as? [String: Any],
-              let thumbnailURLString = (imageLinks["thumbnail"] as? String)?.replacingOccurrences(of: "http://", with: "https://"),
-              let thumbnailURL = URL(string: thumbnailURLString)
-            {
-              self?.imageCache.image(for: thumbnailURL) { [weak self] image in
-                if let image = image {
-                  DispatchQueue.main.async { [weak self] in
-                    self?.set(cell: bookCell, with: image)
-                  }
-                } else {
-                  DispatchQueue.main.async { [weak self] in
-                    self?.displayImageFailThumbnail(cell: bookCell)
-                  }
-                }
-              }
-            } else {
-              DispatchQueue.main.async { [weak self] in
-                self?.displayImageFailThumbnail(cell: bookCell)
-              }
-            }
-          } else {
-            URLSession.shared.dataTask(with: googleBookURL) { [weak self] data, request, error in
-              if
-                let data = data,
-                let googleBookDict = try? JSONSerialization.jsonObject(with: data, options: []) as? [String: Any],
-                let bookInfo = (googleBookDict?["items"] as? [[String: Any]])?.first?["volumeInfo"] as? [String: Any],
-                let imageLinks = bookInfo["imageLinks"] as? [String: Any],
-                let thumbnailURLString = (imageLinks["thumbnail"] as? String)?.replacingOccurrences(of: "http://", with: "https://"),
-                let thumbnailURL = URL(string: thumbnailURLString)
-              {
-                self?.googleBooks[googleBookURL] = googleBookDict
-
-                self?.imageCache.image(for: thumbnailURL) { [weak self] image in
-                  if let image = image {
-                    DispatchQueue.main.async {
-                      self?.set(cell: bookCell, with: image)
-                    }
-                  } else {
-                    DispatchQueue.main.async {
-                      self?.displayImageFailThumbnail(cell: bookCell)
-                    }
-                  }
-                }
-              } else {
-                DispatchQueue.main.async { [weak self] in
-                  self?.displayImageFailThumbnail(cell: bookCell)
-                }
-              }
-            }.resume()
+          self?.tryToGetImage(fromURL: thumbnailURL, for: bookCell)
+        } else {
+          DispatchQueue.main.async { [weak self] in
+            self?.displayImageFailThumbnail(cell: bookCell)
           }
         }
+      } else {
+        URLSession.shared.dataTask(with: googleBookURL) { [weak self] data, request, error in
+          if
+            let data = data,
+            let googleBookDict = try? JSONSerialization.jsonObject(with: data, options: []) as? [String: Any],
+            let bookInfo = (googleBookDict?["items"] as? [[String: Any]])?.first?["volumeInfo"] as? [String: Any],
+            let imageLinks = bookInfo["imageLinks"] as? [String: Any],
+            let thumbnailURLString = (imageLinks["thumbnail"] as? String)?.replacingOccurrences(of: "http://", with: "https://"),
+            let thumbnailURL = URL(string: thumbnailURLString)
+          {
+            self?.googleBooks[googleBookURL] = googleBookDict
+
+            self?.tryToGetImage(fromURL: thumbnailURL, for: bookCell)
+          } else {
+            DispatchQueue.main.async { [weak self] in
+              self?.displayImageFailThumbnail(cell: bookCell)
+            }
+          }
+          }.resume()
       }
     }
 
@@ -128,5 +110,19 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     cell.thumbnailImageView.isHidden = true
     cell.imageLoadingView.stopAnimating()
     cell.imageLoadFailLabel.isHidden = false
+  }
+
+  private func tryToGetImage(fromURL url: URL, for cell: BookTableViewCell) {
+    imageCache.image(for: url) { [weak self] image in
+      if let image = image {
+        DispatchQueue.main.async {
+          self?.set(cell: cell, with: image)
+        }
+      } else {
+        DispatchQueue.main.async {
+          self?.displayImageFailThumbnail(cell: cell)
+        }
+      }
+    }
   }
 }
