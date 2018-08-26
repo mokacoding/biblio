@@ -61,22 +61,18 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             {
               self?.imageCache.image(for: thumbnailURL) { [weak self] image in
                 if let image = image {
-                  DispatchQueue.main.async {
+                  DispatchQueue.main.async { [weak self] in
                     self?.set(cell: bookCell, with: image)
                   }
                 } else {
-                  DispatchQueue.main.async {
-                    bookCell.thumbnailImageView.isHidden = true
-                    bookCell.imageLoadingView.stopAnimating()
-                    bookCell.imageLoadFailLabel.isHidden = false
+                  DispatchQueue.main.async { [weak self] in
+                    self?.displayImageFailThumbnail(cell: bookCell)
                   }
                 }
               }
             } else {
-              DispatchQueue.main.async {
-                bookCell.thumbnailImageView.isHidden = true
-                bookCell.imageLoadingView.stopAnimating()
-                bookCell.imageLoadFailLabel.isHidden = false
+              DispatchQueue.main.async { [weak self] in
+                self?.displayImageFailThumbnail(cell: bookCell)
               }
             }
           } else {

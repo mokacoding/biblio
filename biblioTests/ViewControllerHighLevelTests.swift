@@ -135,6 +135,60 @@ class ViewControllerHighLevelTests: XCTestCase {
 
     waitForExpectations(timeout: 1, handler: .none)
   }
+
+  func test_books_view_controller_loads_list_with_error_if_book_is_in_cache_but_image_fails() {
+    let viewController = ViewController.fromStoryboard(
+      cache: [URL(string: "https://www.googleapis.com/books/v1/volumes?q=isbn:9780062872746&key=\(Secrets.googleBooksKey)")!: GoogleBooksStubs.fixtureJSON],
+      imageCache: UIImageGetterStub(image: .none)
+    )
+
+    NYTimesBooksStubs.stubNYTimesRequestWithSuccess()
+    GoogleBooksStubs.stubBooksRequestWithFailure()
+    GoogleBooksStubs.stubImageRequestWithSuccess()
+
+    _ = viewController.view
+
+    _ = self.expectation(for: ViewController.moreThanOneVisibleCell(), evaluatedWith: viewController, handler: .none)
+
+    waitForExpectations(timeout: 1, handler: .none)
+
+    guard let firstCell = viewController.cell(atRow: 0) else {
+      return XCTFail("Could not get first cell")
+    }
+
+    XCTAssertEqual(firstCell.titleLabel.text, NYTimesBooksStubs.firstBookFromJSONTitle)
+    XCTAssertEqual(firstCell.descriptionLabel.text, NYTimesBooksStubs.firstBookFromJSONDescription)
+
+    _ = expectation(for: BookTableViewCell.errorLabelIsShown(), evaluatedWith: firstCell, handler: .none)
+    waitForExpectations(timeout: 1, handler: .none)
+  }
+
+  func test_books_view_controller_loads_list_with_error_if_book_is_in_cache_but_malformed() {
+    let viewController = ViewController.fromStoryboard(
+      cache: [URL(string: "https://www.googleapis.com/books/v1/volumes?q=isbn:9780062872746&key=\(Secrets.googleBooksKey)")!: ["a key": "not a book"]],
+      imageCache: UIImageGetterStub(image: .none)
+    )
+
+    NYTimesBooksStubs.stubNYTimesRequestWithSuccess()
+    GoogleBooksStubs.stubBooksRequestWithFailure()
+    GoogleBooksStubs.stubImageRequestWithSuccess()
+
+    _ = viewController.view
+
+    _ = self.expectation(for: ViewController.moreThanOneVisibleCell(), evaluatedWith: viewController, handler: .none)
+
+    waitForExpectations(timeout: 1, handler: .none)
+
+    guard let firstCell = viewController.cell(atRow: 0) else {
+      return XCTFail("Could not get first cell")
+    }
+
+    XCTAssertEqual(firstCell.titleLabel.text, NYTimesBooksStubs.firstBookFromJSONTitle)
+    XCTAssertEqual(firstCell.descriptionLabel.text, NYTimesBooksStubs.firstBookFromJSONDescription)
+
+    _ = expectation(for: BookTableViewCell.errorLabelIsShown(), evaluatedWith: firstCell, handler: .none)
+    waitForExpectations(timeout: 1, handler: .none)
+  }
 }
 
 extension ViewControllerHighLevelTests {
