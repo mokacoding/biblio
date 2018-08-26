@@ -8,6 +8,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
   var books: [[String: Any]] = []
   var googleBooks: [URL: [String: Any]] = [:]
   var imageCache: UIImageGetter = ImageCache.shared
+  var googleBookGetter: GoogleBookGetter = URLSession.shared
 
   override func viewDidLoad() {
     title = "Top Books"
@@ -65,22 +66,24 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
           }
         }
       } else {
-        URLSession.shared.dataTask(with: googleBookURL) { [weak self] data, request, error in
-          if
-            let data = data,
-            let jsonObject = try? JSONSerialization.jsonObject(with: data, options: []),
-            let googleBookDict = jsonObject as? [String: Any],
-            let thumbnailURL = self?.getURL(fromGoogleBook: googleBookDict)
-          {
+        self?.googleBookGetter.getGoogleBook(isbn: isbn) { [weak self] result in
+          switch result {
+          case .success(let googleBookDict):
             self?.googleBooks[googleBookURL] = googleBookDict
 
-            self?.tryToGetImage(fromURL: thumbnailURL, for: bookCell)
-          } else {
+            if let thumbnailURL = self?.getURL(fromGoogleBook: googleBookDict) {
+              self?.tryToGetImage(fromURL: thumbnailURL, for: bookCell)
+            } else {
+              DispatchQueue.main.async { [weak self] in
+                self?.displayImageFailThumbnail(cell: bookCell)
+              }
+            }
+          case .failure:
             DispatchQueue.main.async { [weak self] in
               self?.displayImageFailThumbnail(cell: bookCell)
             }
           }
-          }.resume()
+        }
       }
     }
 
