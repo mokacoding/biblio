@@ -57,12 +57,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
       else { return }
 
       if let googleBook = self?.googleBooks[googleBookURL] {
-        if
-          let bookInfo = (googleBook["items"] as? [[String: Any]])?.first?["volumeInfo"] as? [String: Any],
-          let imageLinks = bookInfo["imageLinks"] as? [String: Any],
-          let thumbnailURLString = (imageLinks["thumbnail"] as? String)?.replacingOccurrences(of: "http://", with: "https://"),
-          let thumbnailURL = URL(string: thumbnailURLString)
-        {
+        if let thumbnailURL = self?.getURL(fromGoogleBook: googleBook) {
           self?.tryToGetImage(fromURL: thumbnailURL, for: bookCell)
         } else {
           DispatchQueue.main.async { [weak self] in
@@ -73,11 +68,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         URLSession.shared.dataTask(with: googleBookURL) { [weak self] data, request, error in
           if
             let data = data,
-            let googleBookDict = try? JSONSerialization.jsonObject(with: data, options: []) as? [String: Any],
-            let bookInfo = (googleBookDict?["items"] as? [[String: Any]])?.first?["volumeInfo"] as? [String: Any],
-            let imageLinks = bookInfo["imageLinks"] as? [String: Any],
-            let thumbnailURLString = (imageLinks["thumbnail"] as? String)?.replacingOccurrences(of: "http://", with: "https://"),
-            let thumbnailURL = URL(string: thumbnailURLString)
+            let jsonObject = try? JSONSerialization.jsonObject(with: data, options: []),
+            let googleBookDict = jsonObject as? [String: Any],
+            let thumbnailURL = self?.getURL(fromGoogleBook: googleBookDict)
           {
             self?.googleBooks[googleBookURL] = googleBookDict
 
@@ -124,5 +117,18 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         }
       }
     }
+  }
+
+  private func getURL(fromGoogleBook googleBook: [String: Any]) -> URL? {
+    guard
+      let bookInfo = (googleBook["items"] as? [[String: Any]])?.first?["volumeInfo"] as? [String: Any],
+      let imageLinks = bookInfo["imageLinks"] as? [String: Any],
+      let thumbnailURLString = (imageLinks["thumbnail"] as? String)?.replacingOccurrences(of: "http://", with: "https://"),
+      let thumbnailURL = URL(string: thumbnailURLString)
+    else {
+      return .none
+    }
+
+    return thumbnailURL
   }
 }

@@ -25,6 +25,7 @@
 		3FBFE81920EC271800853FAE /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FBFE81820EC271800853FAE /* ImageCache.swift */; };
 		3FC20CB92131767100C214DC /* image.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 3FC20CB82131767100C214DC /* image.jpeg */; };
 		3FC20CD3213224CC00C214DC /* UIImageGetterStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FC20CD2213224CC00C214DC /* UIImageGetterStub.swift */; };
+		3FC20CD52132374B00C214DC /* GoogleBookGetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FC20CD42132374B00C214DC /* GoogleBookGetter.swift */; };
 		3FC57F9F20DB24210011F6A6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FC57F9E20DB24210011F6A6 /* AppDelegate.swift */; };
 		3FC57FA120DB24210011F6A6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FC57FA020DB24210011F6A6 /* ViewController.swift */; };
 		3FC57FA420DB24210011F6A6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3FC57FA220DB24210011F6A6 /* Main.storyboard */; };
@@ -77,6 +78,7 @@
 		3FBFE81820EC271800853FAE /* ImageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCache.swift; sourceTree = "<group>"; };
 		3FC20CB82131767100C214DC /* image.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = image.jpeg; sourceTree = "<group>"; };
 		3FC20CD2213224CC00C214DC /* UIImageGetterStub.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageGetterStub.swift; sourceTree = "<group>"; };
+		3FC20CD42132374B00C214DC /* GoogleBookGetter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleBookGetter.swift; sourceTree = "<group>"; };
 		3FC57F9B20DB24210011F6A6 /* biblio.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = biblio.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FC57F9E20DB24210011F6A6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3FC57FA020DB24210011F6A6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -177,6 +179,7 @@
 				3F61461B20E426CC00384213 /* BookTableViewCell.xib */,
 				3F2859E821228B25002E3918 /* Result.swift */,
 				3F51DDB02126A4C7007447EC /* main.swift */,
+				3FC20CD42132374B00C214DC /* GoogleBookGetter.swift */,
 			);
 			path = biblio;
 			sourceTree = "<group>";
@@ -323,6 +326,7 @@
 				3F51DDB12126A4C7007447EC /* main.swift in Sources */,
 				3FC57FB120DB37CC0011F6A6 /* Secrets.swift in Sources */,
 				3F2859E921228B25002E3918 /* Result.swift in Sources */,
+				3FC20CD52132374B00C214DC /* GoogleBookGetter.swift in Sources */,
 				3F61461C20E426CC00384213 /* BookTableViewCell.swift in Sources */,
 				3FBFE81920EC271800853FAE /* ImageCache.swift in Sources */,
 				3FC57F9F20DB24210011F6A6 /* AppDelegate.swift in Sources */,
